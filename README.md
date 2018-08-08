@@ -12,6 +12,7 @@ cd defcon_workshop
 TODO: remove this step and pull from docker repo instead.
 
 ```
+./before_docker_build.sh # Downloads required binary dependencies
 docker build -t firmware .
 ```
 
@@ -32,12 +33,10 @@ cmake .. -DBUILD_TYPE=firmware -DHARDWARE=v2
 
 ## Step 5: Flash the device
 
----
 **Attention Mac users:**
 
 Since docker cannot run with privileged mode under OSX, you need to switch to your host system and flash the firmware from there.
 To do so, download and install the JLink software from [here](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack).
----
 
 To flash the device, use the `JLinkExe` command and enter the following when requested:
 
