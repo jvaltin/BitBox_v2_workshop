@@ -16,16 +16,16 @@ cd defcon_workshop
 ### Run the docker image
 
 ```
-docker run --privileged -v /dev/bus/usb:/dev/bus/usb -it -e HOST_USER_ID=$(id -u) -e HOST_USER_GID=$(id -g) -v <PATH_TO_DEFCON_WORKSHOP_REPO>/code/:/home/dockeruser/defcon_workshop shiftcrypto/defcon_workshop
+docker run --privileged -v /dev/bus/usb:/dev/bus/usb -it -e HOST_USER_ID=$(id -u) -e HOST_USER_GID=$(id -g) -v <PATH_TO_DEFCON_WORKSHOP_REPO>:/home/dockeruser/defcon_workshop shiftcrypto/defcon_workshop
 ```
 
 ## Step 2: Build the firmware
 
 ```
-cd ~/defcon_workshop
+cd ~/defcon_workshop/firmware
 mkdir build
 cd build
-cmake .. -DBUILD_TYPE=firmware -DHARDWARE=v2
+cmake ..
 ```
 
 ## Step 3: Flash the device
