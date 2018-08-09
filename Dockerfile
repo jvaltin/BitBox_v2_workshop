@@ -20,7 +20,16 @@ RUN apt-get install -y --no-install-recommends \
   g++ \
   make \
   libncurses5 \
-  xz-utils && \
+  python \
+  python-setuptools \
+  python-wheel \
+  python-pip \
+  python-dev \
+  xz-utils \
+  libusb-1.0-0-dev \
+  libudev-dev && \
+  pip install hidapi && \
+  pip install pyaes && \
   rm -rf /var/lib/apt
 
 RUN mkdir /root/Downloads

@@ -1,0 +1,14 @@
+build
+build-vagrant
+# version.h # FIXME re-add
+NOTES.md
+src/Debug
+.vagrant
+.DS_Store
+.ycm*
+*.o
+*.pyc
+*.sw*
+*.bak
+*.bin
+!*.c
