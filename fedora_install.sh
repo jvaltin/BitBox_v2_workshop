@@ -12,7 +12,9 @@ if [[ ! -d ~/Downloads/cmake-3.9.2 ]]; then
 	fi
 fi
 
-cd ~/Downloads/cmake-3.9.2 && ./bootstrap && make && sudo make install
+cd ~/Downloads/cmake-3.9.2
+
+./bootstrap && make && sudo make install
 
 
 if [[ ! -f gcc-arm-none-eabi-6-2017-q1-update-linux.tar.bz2 ]]; then
@@ -21,4 +23,8 @@ if [[ ! -f gcc-arm-none-eabi-6-2017-q1-update-linux.tar.bz2 ]]; then
 		exit
 fi
 
+cd ~/Downloads/
+
 sudo tar -xf gcc-arm-none-eabi-6-2017-q1-update-linux.tar.bz2 --strip 1 -C /usr/local/
+
+sudo rpm -i JLink_Linux_V634a_x86_64.rpm
