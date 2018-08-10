@@ -16,7 +16,7 @@ If you do not want to use the Live USB, e.g. because you do not want to reboot a
 
 ### Install and run the docker daemon
 
-Checkout the (docker installation guide)[https://docs.docker.com/install/#supported-platforms] for guidelines on how to install the docker service on your platform.
+Checkout the [docker installation guide](https://docs.docker.com/install/#supported-platforms) for guidelines on how to install the docker service on your platform.
 
 ### Get the defcon_workshop code
 
