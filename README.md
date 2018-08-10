@@ -21,18 +21,14 @@ Checkout the [docker installation guide](https://docs.docker.com/install/#suppor
 ### Get the defcon_workshop code
 
 ```
-git clone https://github.com/digitalbitbox/defcon_workshop.git
+git clone https://github.com/shiftdevices/defcon_workshop.git
 cd defcon_workshop
 ```
 
 ### Run the docker image
 
 ```
-docker run --privileged -v /dev/bus/usb:/dev/bus/usb -it 
-  -e HOST_USER_ID=$(id -u) 
-  -e HOST_USER_GID=$(id -g) 
-  -v <PATH_TO_DEFCON_WORKSHOP_REPO>:/home/dockeruser/defcon_workshop 
-  shiftcrypto/defcon_workshop
+docker run --privileged -v /dev/bus/usb:/dev/bus/usb -it -e HOST_USER_ID=$(id -u) -e HOST_USER_GID=$(id -g) -v <PATH_TO_DEFCON_WORKSHOP_REPO>:/home/dockeruser/defcon_workshop shiftcrypto/firmware
 ```
 
 ## Step 2: Build the firmware
