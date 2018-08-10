@@ -251,7 +251,8 @@ and iterating through them.
 
 ### Sign mock
 
-The `demos/demo_sign.c` file contains mock transaction signing code which you can use as a starting point to build your own Monero wallet. 
+The `demos/demo_sign.c` file contains mock transaction signing code which you can use as a starting point to design your own transaction signing flow.
+(It doesn't perform any actual signing at the moment).
 Do you have ideas how to improve the usability? Hack it and let us know! :-)
 
 ## Contact
