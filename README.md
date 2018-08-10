@@ -88,7 +88,7 @@ Notice that the `loadfile` command passes the relative path to the firmware bina
 ## Step 4: Try the demos
 
 After you have built and flashed the device, you can start understanding and modifying the code.
-Change to the directory ~/defcon/firmware and open the files under the `src` directory with your preferred editor.
+Change to the directory `~/defcon_workshop/firmware` and open the files under the `src` directory with your preferred editor.
 
 You should find the `main.c` inside of `src`. Its `main()` function is called upon start-up. Inside, you see initialization
 calls for the system, screen, touch sensor and USB communication.
