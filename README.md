@@ -4,7 +4,15 @@ This is a simple tutorial on how to develop the BitBox v2 device. You will learn
 
 ## Step 1: Setup
 
-To get started, get the Fedora live USB containing the build environment or install the docker image. We recommend using the live USB, because there is no need to download anything. Also, if you're on Mac, you might not be able to run docker in privileged mode. If you prefer docker anyway, for example because you do not want to reboot, follow these steps:
+### Option 1 - Fedora Live USB
+
+To get started, get the Fedora live USB containing the build environment. We recommend using the live USB, because there is no need to download anything. 
+
+### Option 2 - Download the docker image
+
+If you do not want to use the Live USB, e.g. because you do not want to reboot and leave your system, you can download our docker image.
+
+> Careful, it's about 1.5GB big and, for OSX users, flashing the BitBox doesn't work from inside docker!
 
 ### Install and run the docker daemon
 
@@ -43,11 +51,6 @@ Afterwards, you will find the binary at `bin/firmware.bin`, a sub directory of `
 
 ## Step 3: Flash the device
 
-**Attention docker users on OSX:**
-
-Since docker cannot run with privileged mode under OSX, you need to switch to your host system and flash the firmware from there.
-To do so, download and install the JLink software from [here](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack).
-
 To flash the device, use the `JLinkExe` command and enter the following when requested:
 
 ```
@@ -77,10 +80,15 @@ Notice that the `loadfile` command passes the relative path to the firmware bina
 
 **Congratulations**, you compiled and deployed your first BitBox firmware code!
 
+> **Attention docker users on OSX:**
+>
+> Since docker cannot run with privileged mode under OSX, you need to switch to your host system and flash the firmware from there.
+> To do so, download and install the JLink software from [here](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack).
+
 ## Step 4: Try the demos
 
-After you have build and flashed the device, you can start understanding and modifying the code.
-Change to the directroy ~/defcon/firmware and open the files under the `src` directory with your preferred editor.
+After you have built and flashed the device, you can start understanding and modifying the code.
+Change to the directory ~/defcon/firmware and open the files under the `src` directory with your preferred editor.
 
 You should find the `main.c` inside of `src`. Its `main()` function is called upon start-up. Inside, you see initialization
 calls for the system, screen, touch sensor and USB communication.
@@ -241,3 +249,13 @@ More advanced display hacks can be found in `demos/demo_animation.c` and `demos/
 and iterating through them.
  - `demos/demo_mini_pong.c` - Combine the slider and display capability to make a simple Pong game.
 
+### Sign mock
+
+The `demos/demo_sign.c` file contains mock transaction signing code which you can use as a starting point to build your own Monero wallet. 
+Do you have ideas how to improve the usability? Hack it and let us know! :-)
+
+## Contact
+
+Thanks for participating in the workshop. We hope you learned something. :-)
+
+Interested in joining our team and helping us build crypto hardware and software? Then check out [https://www.shiftcrypto.ch](https://www.shiftcrypto.ch) and apply at <jobs@shiftcrypto.ch>.

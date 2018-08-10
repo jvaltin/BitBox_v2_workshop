@@ -62,4 +62,6 @@ void demo_sd(void)
     sd_list();
     
     screen_print_debug("SD card demo\nfinished.", NULL, 3000);
+    
+    while (1) {}
 }

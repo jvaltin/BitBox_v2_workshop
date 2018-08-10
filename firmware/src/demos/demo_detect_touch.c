@@ -59,7 +59,7 @@ void demo_detect_touch(void)
             measurement_done_touch = 0;
 
             for (i = 0; i < 8; i++) {
-                // calculate the applied touch force of the referenced sensor
+                // calculate the applied touch capacitive value of the referenced sensor
                 touch_delta = MAX(0, qtouch_get_sensor_node_signal(i) - qtouch_get_sensor_node_reference(i));
                 snprintf(value_button[i], sizeof(value_button) / 8, "%02x", (touch_delta / 4) * 4);// round to resolution of 4
             }

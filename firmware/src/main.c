@@ -29,16 +29,17 @@ int main(void)
     qtouch_init();
     usb_init();
 
-    // =================
-    // put your code here
-    // =================
+    // ===================================
+    // Uncomment a demo function to run it
+    // ===================================
+
     demo_hello_world();
-    demo_detect_touch();
-    demo_sd();
-    demo_animation();
-    demo_mini_pong();
-    demo_crypto();
-    demo_sign();
+    //demo_detect_touch();
+    //demo_sd();
+    //demo_crypto();
+    //demo_sign();
+    //demo_animation();
+    //demo_mini_pong();
 
     while (1) {}
 }
