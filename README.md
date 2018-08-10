@@ -4,7 +4,7 @@ This is a simple tutorial on how to develop the BitBox v2 device. You will learn
 
 ## Step 1: Setup
 
-### Option 1 - Fedora Live USB
+### Option 1 - Fedora Live USB (recommended)
 
 To get started, get the Fedora live USB containing the build environment. We recommend using the live USB, because there is no need to download anything. 
 
