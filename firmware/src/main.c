@@ -24,20 +24,21 @@ int main(void)
 {
     system_init();
     screen_init();
+    // displays BitBox logo with version 'defcon'
     screen_splash("defcon", 300);
     qtouch_init();
     usb_init();
 
-    demo_crypto();
-    demo_sd();
-    demo_mini_pong();
-    demo_detect_touch();
+    // =================
+    // put your code here
+    // =================
     demo_hello_world();
+    demo_detect_touch();
+    demo_sd();
     demo_animation();
+    demo_mini_pong();
+    demo_crypto();
     demo_sign();
-
-
-    screen_splash("go", 300);
 
     while (1) {}
 }

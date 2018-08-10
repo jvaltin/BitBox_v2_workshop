@@ -24,7 +24,10 @@ extern volatile uint8_t measurement_done_touch;
 uint16_t slider_position[DEF_NUM_SCROLLERS];
 uint16_t active_timer[DEF_NUM_SCROLLERS];
 
-
+/**
+ * Updates the slider position and increments or resets
+ * the active timer (which indicates the duration of the touch).
+ */
 static void touch_slider_update(uint16_t nr)
 {
     if (qtouch_get_scroller_state(nr)) {
@@ -56,6 +59,7 @@ void demo_detect_touch(void)
             measurement_done_touch = 0;
 
             for (i = 0; i < 8; i++) {
+                // calculate the applied touch force of the referenced sensor
                 touch_delta = MAX(0, qtouch_get_sensor_node_signal(i) - qtouch_get_sensor_node_reference(i));
                 snprintf(value_button[i], sizeof(value_button) / 8, "%02x", (touch_delta / 4) * 4);// round to resolution of 4
             }
@@ -80,7 +84,6 @@ void demo_detect_touch(void)
             UG_PutString(10, 34, value_slider_0);
             UG_PutString(10, 18, value_slider_1);
             
-            // FIXME - Correct button positions
             for (i = 0; i < 8; i++) {
                 int x = (i % 4) * (SCREEN_WIDTH / 4 + 4);
                 int y = (i / 4) * (SCREEN_HEIGHT - 10);

@@ -76,7 +76,12 @@ void screen_led_abort(void)
     screen_led_off();
 }
 
-
+/**
+ * Displays the splash screen with the Swiss flag and BitBox label.
+ * The version string is passed as an argument and appears on the right bottom of 
+ * the screen.
+ * The duration is passed as an argument.
+ */
 void screen_splash(const char *version, int duration)
 {
     uint8_t b, x0, x1, x, y0, y1, y, trim;

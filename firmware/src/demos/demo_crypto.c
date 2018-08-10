@@ -71,8 +71,8 @@ void demo_crypto(void)
     uint8_t iv[16];
     memset(iv, 0, sizeof(iv));
 
-	aes_sync_enable(&CRYPTOGRAPHY_0);
-	aes_sync_set_encrypt_key(&CRYPTOGRAPHY_0, aes_key, AES_KEY_256);
+    aes_sync_enable(&CRYPTOGRAPHY_0);
+    aes_sync_set_encrypt_key(&CRYPTOGRAPHY_0, aes_key, AES_KEY_256);
     aes_sync_cbc_crypt(&CRYPTOGRAPHY_0, AES_ENCRYPT, aes_plain_text, aes_output, sizeof(aes_plain_text), iv);
     
     snprintf(aes_cipher_hex, sizeof(aes_cipher_hex), "%s", utils_uint8_to_hex(aes_cipher_text, sizeof(aes_cipher_text)));
