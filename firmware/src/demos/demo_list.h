@@ -12,6 +12,7 @@ void demo_hello_world(void);
 void demo_detect_touch(void);
 void demo_animation(void);
 void demo_mini_pong(void);
+void demo_crypto(void);
 void demo_sign(void);
 void demo_sd(void);
 

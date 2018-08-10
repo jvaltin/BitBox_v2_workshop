@@ -28,12 +28,14 @@ int main(void)
     qtouch_init();
     usb_init();
 
+    demo_crypto();
     demo_sd();
-    demo_sign();
-    demo_detect_touch();
     demo_mini_pong();
-    demo_animation();
+    demo_detect_touch();
     demo_hello_world();
+    demo_animation();
+    demo_sign();
+
 
     screen_splash("go", 300);
 

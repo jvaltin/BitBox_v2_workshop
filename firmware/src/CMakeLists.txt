@@ -19,6 +19,7 @@ set(DBB-FIRMWARE-SOURCES
     demos/demo_detect_touch.c
     demos/demo_animation.c
     demos/demo_mini_pong.c
+    demos/demo_crypto.c
     demos/demo_sd.c
     main.c
 )

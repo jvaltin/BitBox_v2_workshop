@@ -27,7 +27,7 @@ uint16_t active_timer[DEF_NUM_SCROLLERS];
 
 static void touch_slider_update(uint16_t nr)
 {
-    if (0u != qtouch_get_scroller_state(nr)) {
+    if (qtouch_get_scroller_state(nr)) {
         slider_position[nr] = (255 - qtouch_get_scroller_position(nr));
         active_timer[nr]++;
     } else {
