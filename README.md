@@ -28,7 +28,7 @@ cd defcon_workshop
 ### Run the docker image
 
 ```
-docker run --privileged -v /dev/bus/usb:/dev/bus/usb -it -e HOST_USER_ID=$(id -u) -e HOST_USER_GID=$(id -g) -v <PATH_TO_DEFCON_WORKSHOP_REPO>:/home/dockeruser/defcon_workshop shiftcrypto/firmware:first
+docker run --privileged -v /dev/bus/usb:/dev/bus/usb -it -e HOST_USER_ID=$(id -u) -e HOST_USER_GID=$(id -g) -v <PATH_TO_DEFCON_WORKSHOP_REPO>:/home/dockeruser/defcon_workshop shiftcrypto/firmware:latest
 ```
 
 ## Step 2: Build the firmware
