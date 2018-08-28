@@ -1,4 +1,4 @@
-# Defcon 2018 - Hack on Bitbox Workshop
+# Hack on Bitbox v2 Workshop 2018
 
 This is a simple tutorial on how to develop the BitBox v2 device. You will learn how to compile the firmware, flash the device and modify the code to do your own experiments. Enjoy :-)
 
@@ -18,17 +18,17 @@ If you do not want to use the Live USB, e.g. because you do not want to reboot a
 
 Checkout the [docker installation guide](https://docs.docker.com/install/#supported-platforms) for guidelines on how to install the docker service on your platform.
 
-### Get the defcon_workshop code
+### Get the BitBox_v2_workshop code
 
 ```
-git clone https://github.com/shiftdevices/defcon_workshop.git
-cd defcon_workshop
+git clone https://github.com/shiftdevices/BitBox_v2_workshop.git
+cd BitBox_v2_workshop
 ```
 
 ### Run the docker image
 
 ```
-docker run --privileged -v /dev/bus/usb:/dev/bus/usb -it -e HOST_USER_ID=$(id -u) -e HOST_USER_GID=$(id -g) -v <PATH_TO_DEFCON_WORKSHOP_REPO>:/home/dockeruser/defcon_workshop shiftcrypto/firmware:latest
+docker run --privileged -v /dev/bus/usb:/dev/bus/usb -it -e HOST_USER_ID=$(id -u) -e HOST_USER_GID=$(id -g) -v <PATH_TO_WORKSHOP_REPO>:/home/dockeruser/BitBox_v2_workshop shiftcrypto/firmware:latest
 ```
 
 ## Step 2: Build the firmware
@@ -36,7 +36,7 @@ docker run --privileged -v /dev/bus/usb:/dev/bus/usb -it -e HOST_USER_ID=$(id -u
 We're using cmake as a build tool. Follow these instructions to get a working binary:
 
 ```
-cd ~/defcon_workshop/firmware
+cd ~/BitBox_v2_workshop/firmware
 mkdir build
 cd build
 cmake ..
@@ -84,7 +84,7 @@ Notice that the `loadfile` command passes the relative path to the firmware bina
 ## Step 4: Try the demos
 
 After you have built and flashed the device, you can start understanding and modifying the code.
-Change to the directory `~/defcon_workshop/firmware` and open the files under the `src` directory with your preferred editor.
+Change to the directory `~/BitBox_v2_workshop/firmware` and open the files under the `src` directory with your preferred editor.
 
 You should find the `main.c` inside of `src`. Its `main()` function is called upon start-up. Inside, you see initialization
 calls for the system, screen, touch sensor and USB communication.
