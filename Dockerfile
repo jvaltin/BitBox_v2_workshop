@@ -26,25 +26,35 @@ RUN apt-get install -y --no-install-recommends \
   python-pip \
   python-dev \
   xz-utils \
+  git \
+  openssl \
+  libssl-dev \
   libusb-1.0-0-dev \
-  libudev-dev && \
+  libudev-dev \
+  autoconf \
+  automake \
+  libtool \
+  procps \
+  && \
   pip install hidapi && \
   pip install pyaes && \
   rm -rf /var/lib/apt
 
 RUN mkdir /root/Downloads
 
-COPY JLink_Linux_V634_x86_64.deb /root/Downloads/
-RUN cd /root/Downloads && dpkg -i JLink_Linux_V634_x86_64.deb
+COPY JLink_Linux_V634c_x86_64.deb /root/Downloads/
+RUN cd /root/Downloads && dpkg -i JLink_Linux_V634c_x86_64.deb
 
-COPY cmake-3.9.2.tar.gz /root/Downloads/
-RUN cd /root/Downloads && tar -xzf cmake-3.9.2.tar.gz 
-RUN cd /root/Downloads/cmake-3.9.2 && ./bootstrap && make && make install
+COPY cmake-3.11.2.tar.gz /root/Downloads/
+RUN cd /root/Downloads && tar -xzf cmake-3.11.2.tar.gz 
+RUN cd /root/Downloads/cmake-3.11.2 && ./bootstrap && make && make install
 
 COPY gcc-arm-none-eabi-6-2017-q1-update-linux.tar.bz2 /root/Downloads/
 RUN cd /root/Downloads && tar -xf gcc-arm-none-eabi-6-2017-q1-update-linux.tar.bz2  --strip 1 -C /usr/local/
 
 RUN rm -rf /root/Downloads/*
+
+RUN echo "root:dockerpassword" | chpasswd
 
 COPY user-mapping.sh /
 RUN  chmod u+x user-mapping.sh
